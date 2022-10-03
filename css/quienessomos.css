@@ -1,0 +1,189 @@
+:root{
+    --oscuro: #07070A;
+    --azulOcuro: #0a1128;
+    --azulClaro: #006fe6;
+    --blanco: #fefcfb;
+    --titulos:'Baloo 2', cursive;
+    --parrafos:'Montserrat', sans-serif;
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    height: 100%;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+
+.ocultar{
+    display: none;
+}
+
+@keyframes desplazamiento{
+
+    /*despasamiento inicial*/
+
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+/*Estilos globales*/
+
+h1, h2, h3{
+    font-family: var(--titulos);
+}
+
+p, a{
+    font-family: var(--parrafos);
+}
+
+
+/*encabezado*/
+.encabezado{
+    background-image: url('../image/quienes-somos.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 70rem;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+@media(min-width: 768px){
+    .encabezado{
+        background-attachment: fixed;
+    }
+}
+
+.encabezado::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: -1;
+}
+.logo h2{
+    font-size: 3rem;
+}
+.logo h2 span{
+    color: var(--azulClaro);
+}
+.contenido-navegacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--blanco);
+    box-shadow: 10px 10px 16px -6px rgba(0, 0, 0, 0.45);
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+.navegacion{
+    background-color: var(--blanco);
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    animation: desplazamiento .5s ease-in-out;
+}
+
+@media(min-width: 768px){
+    .ocultar{
+        display: inline;
+    }
+}
+.navegacion a{
+    display: block;
+    font-size: 2rem;
+    padding: 1.1rem;
+    color: var(--oscuro);
+    text-decoration: none;
+    transition: background-color .3s ease-in-out;
+}
+.navegacion a:hover{
+    background-color: var(--azulClaro);
+    color: var(--blanco);
+}
+@media(min-width: 768px){
+    .navegacion a{
+        display: inline;
+    }
+}
+@media(min-width: 768px){
+    .navegacion{
+        position: relative;
+        top: unset;
+        width: auto;
+        background-color: unset;
+        animation: unset;
+    }
+}
+.hamburguesa span{
+    width: 5rem;
+    height: 1rem;
+    border: 3px solid white;
+    background-color: var(--oscuro);
+    display: block;
+}
+
+@media(min-width: 768px) {
+    .hamburguesa{
+        display: none;
+    }
+}
+
+/*encabezado*/
+
+.texto-encabezado h1{
+    font-size: 3rem;
+    text-align: center;
+    color: var(--blanco);
+    padding-top: 9rem;
+    margin: 15px 0;
+
+}
+
+/*negocio*/
+.container{ 
+    text-align: center;
+
+}
+
+.negocios{
+    padding-top: 5rem;
+}
+
+.negocios h2{
+    font-size: 5rem;
+    text-align: center;
+    color: var(--azulClaro);
+}
+
+.footer .logo h2, .footer p{
+    text-align: center;
+}
+@media(min-width: 768px){
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white
+}
